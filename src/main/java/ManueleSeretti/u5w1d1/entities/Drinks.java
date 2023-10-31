@@ -16,6 +16,6 @@ public class Drinks extends ElementiMenu {
     public String toString() {
         return "Drinks{" +
                 "quantità=" + quantità +
-                "} " + super.toString();
+                super.toString() + "} \n";
     }
 }

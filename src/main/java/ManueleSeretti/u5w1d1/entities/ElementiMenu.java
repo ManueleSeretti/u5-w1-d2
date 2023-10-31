@@ -12,4 +12,11 @@ public abstract class ElementiMenu {
     private int calorie;
     private double prezzo;
 
+    @Override
+    public String toString() {
+        return
+                "nome='" + nome + '\'' +
+                        ", calorie=" + calorie +
+                        ", prezzo=" + prezzo;
+    }
 }

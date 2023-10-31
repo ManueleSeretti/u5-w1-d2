@@ -16,7 +16,7 @@ public class Pizze extends ElementiMenu {
     @Override
     public String toString() {
         return "Pizze{" +
-                "ingredienti=" + ingredienti +
-                "} " + super.toString();
+                "ingredienti=" + ingredienti + super.toString() +
+                "} \n";
     }
 }

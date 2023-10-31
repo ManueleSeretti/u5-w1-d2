@@ -11,6 +11,6 @@ public class Toppings extends ElementiMenu {
 
     @Override
     public String toString() {
-        return "Toppings{} " + super.toString();
+        return "Toppings{ " + super.toString() + " } \n";
     }
 }
