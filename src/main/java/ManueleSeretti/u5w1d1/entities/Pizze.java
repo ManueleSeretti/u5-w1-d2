@@ -1,12 +1,10 @@
 package ManueleSeretti.u5w1d1.entities;
 
 import lombok.Getter;
-import lombok.ToString;
 
 import java.util.List;
 
 @Getter
-@ToString
 public class Pizze extends ElementiMenu {
     private List<String> ingredienti;
 
@@ -15,4 +13,10 @@ public class Pizze extends ElementiMenu {
         this.ingredienti = ingredienti;
     }
 
+    @Override
+    public String toString() {
+        return "Pizze{" +
+                "ingredienti=" + ingredienti +
+                "} " + super.toString();
+    }
 }

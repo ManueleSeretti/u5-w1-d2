@@ -1,10 +1,8 @@
 package ManueleSeretti.u5w1d1.entities;
 
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
-@ToString
 public class Drinks extends ElementiMenu {
 
     private double quantità;
@@ -14,5 +12,10 @@ public class Drinks extends ElementiMenu {
         this.quantità = quantità;
     }
 
-
+    @Override
+    public String toString() {
+        return "Drinks{" +
+                "quantità=" + quantità +
+                "} " + super.toString();
+    }
 }
