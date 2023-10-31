@@ -1,17 +1,11 @@
 package ManueleSeretti.u5w1d1.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
-public class Toppings {
-    private String nome;
-    private int calorie;
-    private double prezzo;
+public class Toppings extends ElementiMenu {
 
-    @Override
-    public String toString() {
-        return nome + '\'' + "       " + calorie + "Kcal" + "       " + prezzo + "}\n";
+    public Toppings(String nome, int calorie, double prezzo) {
+        super(nome, calorie, prezzo);
     }
 }

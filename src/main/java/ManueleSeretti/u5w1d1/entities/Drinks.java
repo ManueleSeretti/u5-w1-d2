@@ -1,18 +1,18 @@
 package ManueleSeretti.u5w1d1.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
-@AllArgsConstructor
-public class Drinks {
-    private String nome;
-    private int calorie;
-    private double prezzo;
+@ToString
+public class Drinks extends ElementiMenu {
+
     private double quantità;
 
-    @Override
-    public String toString() {
-        return nome + "  " + quantità + "l         " + calorie + " Kcal            " + prezzo + "}\n";
+    public Drinks(String nome, int calorie, double prezzo, double quantità) {
+        super(nome, calorie, prezzo);
+        this.quantità = quantità;
     }
+
+
 }
