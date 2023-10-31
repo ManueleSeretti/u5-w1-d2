@@ -1,9 +1,6 @@
 package ManueleSeretti.u5w1d1;
 
-import ManueleSeretti.u5w1d1.entities.Drinks;
-import ManueleSeretti.u5w1d1.entities.Pizze;
-import ManueleSeretti.u5w1d1.entities.Toppings;
-import ManueleSeretti.u5w1d1.entities.menu;
+import ManueleSeretti.u5w1d1.entities.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -87,5 +84,20 @@ public class BeansConfiguration {
         List<Toppings> lt = new ArrayList<>(Arrays.asList(getCheese(), getHam(), getOnion(), getPineapple(), getSalami()));
         List<Drinks> ld = new ArrayList<>(Arrays.asList(getLemonated(), getWater(), getVine()));
         return new menu(lp, lt, ld);
+    }
+
+    @Bean
+    List<ElementiMenu> getLista() {
+        List<ElementiMenu> lista = new ArrayList<>();
+        lista.add(getPizzaMargherita());
+        lista.add(getPizzaMargherita());
+        lista.add(getPizzaMargherita());
+        lista.add(getPizzaMargherita());
+
+        lista.add(getWater());
+        lista.add(getWater());
+        lista.add(getWater());
+        lista.add(getWater());
+        return lista;
     }
 }
