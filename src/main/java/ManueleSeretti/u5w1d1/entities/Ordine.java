@@ -1,14 +1,21 @@
 package ManueleSeretti.u5w1d1.entities;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Random;
 
 @Getter
+@Setter
 @ToString
+@Component("Order_Component")
+@PropertySource("application.properties")
 public class Ordine {
 
     private int id;
@@ -18,16 +25,21 @@ public class Ordine {
     private int coperti;
     private List<ElementiMenu> lista;
     private double conto;
+    @Value("${prezzo.coperto}")
+    private double prezzo_coperto;
 
-    public Ordine(Tavolo tavolo, LocalTime ora, int coperti, List<ElementiMenu> lista) {
+    public Ordine(Tavolo tavolo, @Value("4") int coperti) {
         Random rndm = new Random();
         this.id = rndm.nextInt(1000, 9999);
         this.tavolo = tavolo;
-        this.ora = ora;
+        this.ora = LocalTime.of(20, 00);
         this.coperti = coperti;
-        this.lista = lista;
         this.stato = StatoOrdine.IN_CORSO;
-        lista.forEach(e -> this.conto = this.conto + e.getPrezzo());
-        this.conto = this.conto + (coperti * 1);
+
+    }
+
+    public void conto() {
+        this.lista.forEach(e -> this.conto = this.conto + e.getPrezzo());
+        this.conto = this.conto + (coperti * (prezzo_coperto));
     }
 }
